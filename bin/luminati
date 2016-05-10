@@ -182,6 +182,7 @@ const create_web_interface = proxies=>etask(function*(){
         })
         res.render('stats', {stats: r.body[argv.customer]||{}});
     }));
+    app.use(express.static(path.join(__dirname, 'public')));
     io.on('connection', socket=>etask(function*(){
         const notify = (name, value)=>{
             const data = {};
