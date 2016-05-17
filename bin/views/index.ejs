@@ -39,6 +39,128 @@
         <h4 class=modal-title>New Proxy</h4>
       </div>
       <div class=modal-body>
+        <form class=form-horizontal>
+          <div class="box-group" id="new_accordion">
+            <div class="panel box box-primary">
+              <div class="box-header with-border">
+                <h4 class="box-title">
+                  <a data-toggle="collapse" data-parent="#new_accordion" href="#new_general">
+                    General
+                  </a>
+                </h4>
+              </div>
+              <div id="new_general" class="panel-collapse collapse in">
+                <div class="box-body">
+                  <div class=form-group>
+                    <label class="col-sm-2 control-label">Port</label>
+                    <div class=col-sm-10>
+                      <input type=number class=form-control name=port placeholder="Leave empty for automatic allocation">
+                    </div>
+                  </div>
+                  <div class=form-group>
+                    <label class="col-sm-2 control-label">Credentials</label>
+                    <div class=col-sm-5>
+                      <input type=text class=form-control name=customer placeholder=customer>
+                    </div>
+                    <div class=col-sm-5>
+                      <input type=text class=form-control name=password placeholder=password>
+                    </div>
+                  </div>
+                  <div class=form-group>
+                    <label class="col-sm-2 control-label">Proxy</label>
+                    <div class=col-sm-10>
+                      <input type=text class=form-control name=proxy placeholder="us, uk or an ip">
+                    </div>
+                  </div>
+                  <div class=form-group>
+                    <label class="col-sm-2 control-label">Zone</label>
+                    <div class=col-sm-10>
+                      <input type=text class=form-control name=zone value=gen>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel box">
+              <div class="box-header with-border">
+                <h4 class="box-title">
+                  <a data-toggle="collapse" data-parent="#new_accordion" href="#new_filtering">
+                    IP Filtering
+                  </a>
+                </h4>
+              </div>
+              <div id="new_filtering" class="panel-collapse collapse">
+                <div class="box-body">
+                  <div class=form-group>
+                    <label class="col-sm-2 control-label">Country</label>
+                    <div class=col-sm-10>
+                      <select class=form-control name=country>
+                        <option value="">Any</option>
+                        <% countries.forEach(country=>{ %>
+                        <option value=<%=country.code%>><%=country.name%></option>
+                        <% }) %>
+                      </select>
+                    </div>
+                  </div>
+                  <div class=form-group>
+                    <label class="col-sm-2 control-label">City</label>
+                    <div class=col-sm-10>
+                      <input type=text class=form-control name=city>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel box">
+              <div class="box-header with-border">
+                <h4 class="box-title">
+                  <a data-toggle="collapse" data-parent="#new_accordion" href="#new_misc">
+                    Other
+                  </a>
+                </h4>
+              </div>
+              <div id="new_misc" class="panel-collapse collapse">
+                <div class="box-body">
+                  <div class=form-group>
+                    <label class="col-sm-2 control-label">DNS</label>
+                    <div class="col-sm-10">
+                      <div class=radio>
+                        <label>
+                          <input type=radio name=dns value=local checked>
+                          Local
+                        </label>
+                      </div>
+                      <div class=radio>
+                        <label>
+                          <input type=radio name=dns value=remove checked>
+                          Remote
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class=modal-footer>
+        <button type=button class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id=new_modal1 tabindex=-1 role=dialog>
+  <div class=modal-dialog>
+    <div class=modal-content>
+      <div class=modal-header>
+        <button type=button class=close data-dismiss=modal aria-label=Close>
+          <span aria-hidden=true>&times;</span>
+        </button>
+        <h4 class=modal-title>New Proxy</h4>
+      </div>
+      <div class=modal-body>
         <p>
         <form class=form-horizontal>
           <div class=form-group>
