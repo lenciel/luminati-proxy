@@ -97,8 +97,8 @@ if (opts.resolve)
         });
         log('DEBUG', `** DOMAINS: domains`);
         opts.resolve = ip=>{
-            log('DEBUG', `** : ip`);
-            log('DEBUG', `** : domains[ip]`);
+            log('DEBUG', `** ip: ${ip}`);
+            log('DEBUG', `** domains[ip]: ${domains[ip]}`);
             return domains[ip]||ip;
         }
     }
