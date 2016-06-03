@@ -95,7 +95,12 @@ if (opts.resolve)
             log('DEBUG', `dns entry: ${m[1]} => ${m[2]}`);
             domains[m[1]] = m[2];
         });
-        opts.resolve = ip=>domains[ip]||ip;
+        log('DEBUG', `** DOMAINS: domains`);
+        opts.resolve = ip=>{
+            log('DEBUG', `** : ip`);
+            log('DEBUG', `** : domains[ip]`);
+            return domains[ip]||ip;
+        }
     }
 }
 if (argv.log=='DEBUG')
